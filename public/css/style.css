@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap');
+
+:root {
+  --black: #1c1c1c;
+  --gray: #7E7E7E;
+  --gray-light: #E4E4E4;
+  --red: #b30000;
+  --font-size-base: 1rem;
+  --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --border-radius: 10px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--black);
+  font-size: var(--font-size-base);
+  background-color: #f8f4e3;
+  /* background-image: url("/img/img-noise-361x370.png"); */
+  margin: 0;
+}
+
+a { color: var(--black); }
+h1 { font-size: var(--font-size-xl); }
+h2 { font-size: var(--font-size-lg); }
+h3 { font-size: var(--font-size-md); }
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+select,
+textarea {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.7rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background-color: var(--black);
+  border: none;
+  color: white; 
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px; 
+  cursor: pointer;
+}
+
+.btn-delete {
+  padding: 10px 16px;
+  background-color: var(--red);
+}
+
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* Layout */
+.container {
+  max-width: 982px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+/* Styling for the main about container */
+.about {
+    text-align: center; /* Center-align the text and image */
+    margin-bottom: 20px; /* Space below the image */
+}
+
+
+/* Styling for the about-text section */
+.about-text {
+    font-family: Arial, sans-serif; /* Default font for the entire page */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    padding-top: 20px; /* Add space at the top of the page */
+    max-width: 800px; /* Maximum width for the text box */
+    margin: 0 auto; /* Center-align the text box */
+    padding: 20px; /* Padding inside the text box */
+    background-color: #946c46; /* White background for the text box */
+    border-style: solid ;
+    border-radius: 30px;           /* Rounded corners */
+    border-color: #1c1c1c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    color: #333; /* Dark color for the text */
+    line-height: 1.6; /* Increase line height for better readability */
+    font-size: 1.1em; /* Slightly larger font for readability */
+    
+}
+
+/* Specific styling for paragraphs inside about-text */
+.about-text p {
+    margin-bottom: 20px; /* Space between paragraphs */
+    text-align: justify; /* Justify the text for a clean look */
+    color: whitesmoke;
+    
+}
+
+/* Specific styling for the heading inside about */
+.about h1 {
+    font-size: 2em; /* Larger font size for the heading */
+    color: #333; /* Dark color for the heading */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+.main {
+  padding: 20px 0;
+}
+
+/* Hero Section */
+
+/* Hero Section */
+.cover-image {
+  max-height: 528px;
+  filter: drop-shadow(0px 44px 34px rgba(0, 0, 0, 0.25));
+  overflow: hidden;
+  border-radius: var(--border-radius);
+}
+
+
+
+/* styles.css */
+.my-image {
+  width: 300px; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  margin-top: 20px; /* Space above the image */
+  margin-bottom: 40px; /* Increased space below the image */
+  
+  border-radius: 25px; /* Round the corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.my-image:hover {
+  transform: translateY(-20px); /* Uplift the image */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.9); /* Increase shadow on hover */
+}
+
+
+
+
+/* Main Header */
+.header {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "logo button"
+  "menu menu";
+  padding-top: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: 
+    "logo menu button";
+  }
+}
+
+.header__logo {
+  font-weight: 800;
+  font-size: 25px;
+  text-decoration: none;
+  grid-area: logo;
+}
+
+.header__logo:hover {
+  text-decoration: underline;
+}
+
+.header__nav {
+  justify-content: center;
+  display: flex;
+  grid-area: menu;
+}
+
+.header__logo, .header__nav, .header__button {
+  width: 100%;
+}
+
+.header__button {
+  display: flex;
+  justify-content: end;
+  grid-area: button;
+}
+
+.header__button button {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  border: 0;
+  padding: 6px 12px;
+  background: none;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.header__button button:hover {
+  border: 2px solid var(--black);
+}
+
+/* Header -> Navigation */
+.header__nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+  font-weight: 600;
+  padding: 0;
+}
+
+.header__nav ul a {
+  padding: 10px;
+  text-decoration: none;
+}
+
+.header__nav ul a.active {
+  color: #7E7E7E;
+}
+
+.header__nav ul a:hover {
+  text-decoration: underline;
+}
+
+/* Author - HomePage */
+.author {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.author__heading {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.author__body {
+  font-size: var(--font-size-md);
+  margin: 5px 0 40px 0;
+}
+
+
+/* Home Article List */
+.articles__heading {
+  margin-top: 4rem;
+  font-weight: 400;
+}
+
+.article-ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.article-list__date {
+  font-size: 1rem;
+  color: var(--gray);
+  width: 100px;
+  display: inline-block;
+  width: 260px;
+}
+
+.article-ul li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  margin: 18px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .article-ul li a {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .article-list__date {
+    text-align: right;
+  }
+}
+
+.article-ul li {
+  font-size: 24px;
+  cursor: pointer;
+  transition: filter 0.1s;
+}
+
+.article-ul li:not(:last-child) {
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.article-ul li:hover {
+  filter: none;
+}
+
+.article-ul:hover li {
+  filter: blur(3px);
+}
+
+.article-ul:hover li:hover {
+  filter: none;
+}
+
+
+.article {
+  white-space: pre-wrap;
+}
+
+
+/* Footer */
+.footer {
+  margin: 4rem;
+  text-align: center;
+}
+
+
+/* Dashboard Admin */
+.admin-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-posts {
+  padding: 0;
+  margin: 0;
+}
+
+.admin-post-controls form {
+  display: inline-block;
+}
+
+.admin-post-controls .btn  {
+  display: inline-block;
+  background-color: var(--black);
+  color: var(--gray-light);
+  border: 0;
+  text-decoration: none;
+  font-size: .8rem;
+  padding: 4px 8px;
+  line-height: 2;
+}
+
+.admin-posts li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+/* SeachBar */
+.searchBar {
+  visibility: hidden;
+  transform: translateY(-100px);
+  background-color: var(--black);
+  padding: 4px 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+
+.searchBar.open {
+  transform: translateY(0);
+  transition: transform 0.1s;
+}
+
+.searchBar input {
+  margin: 0;
+  border: 0;
+}
+
+#searchClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--gray-light);
+  padding: 15px;
+}
+
+
+.pagination {
+  font-size: 1.3rem;
+  color: var(--gray);
+  text-decoration: none;
+  margin-top: 40px;
+  display: inline-block;
+}
+
+.pagination:hover {
+  color: var(--black);
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;   
+}
+
+.admin-heading {
+  text-align: center; /* Centers the text horizontally */
+  font-family: 'Arial', sans-serif; /* Changes the font */
+  font-size: 35px; /* Adjusts the font size */
+  font-weight: bold; /* Makes the font bold */
+  margin: 40px ; /* Adds some space above and below the heading */
+  margin-bottom: 50px;
+  text-decoration: underline; 
+}
+
+/* Styling for the post title */
+.post-title {
+  font-size: 2.5em;             /* Large font size for emphasis */
+  color: black;                  /* Dark color for readability */
+  text-align: center;           /* Center the title */
+  margin-bottom: 20px;          /* Space between title and content */
+  text-transform: capitalize;   /* Capitalize the first letter of each word */
+  font-family: 'Arial', sans-serif; /* Font choice */
+  width: 100%;                  /* Ensure it takes up full width */
+}
+
+/* Styling for the post content */
+.post-content {
+  font-size: 1em;             /* Slightly larger than normal text */
+  line-height: 2;             /* Increased line height for readability */
+  color: black;                  /* Medium gray color */
+  padding: 20px;                /* Padding inside the content area */
+  text-align: justify;          /* Justify text for a clean look */
+  font-family: 'Georgia', serif; /* Font choice */
+  background-color: #f9f9f9;    /* Light background for content area */
+  border-style: solid ;
+  border-radius: 30px;           /* Rounded corners */
+  border-color: #1c1c1c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin: 0 auto;               /* Center the content block */
+  max-width: 1000px;             /* Limit the width of the content */       /* Break long words to avoid overflow */
+  white-space: pre-wrap; /* Preserves whitespace and wraps text when needed */
+  word-break: break-word; /* Forces long words to break and wrap */
+}
+
+
+
+/* Ensure that paragraphs within post content are spaced properly */
+.post-content p {
+  margin-bottom: 20px;          /* Add space between paragraphs */
+}
+
